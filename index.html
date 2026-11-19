@@ -1,531 +1,969 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceylon Motor Hub | Find Your Dream Car</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CEYLON MOTOR HUB - Japanese imported used car parts in Sri Lanka.">
+<title>CEYLON MOTOR HUB | Japanese Auto Parts</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background: #f5f6f8;
-            color: #222;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #222;
+}
 
-        /* Navigation */
-        header {
-            background: #101820;
-            color: white;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #ffb703;
-        }
+.topbar {
+    background: #252525;
+    color: white;
+    padding: 9px 5%;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-        }
+header {
+    background: white;
+    padding: 20px 5%;
+    border-bottom: 1px solid #ddd;
+}
 
-        nav a:hover {
-            color: #ffb703;
-        }
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        /* Hero */
-        .hero {
-            min-height: 550px;
-            background:
-                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-                url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            padding: 60px 8%;
-            color: white;
-        }
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #222;
+}
 
-        .hero-content {
-            max-width: 650px;
-        }
+.logo span {
+    color: #e00020;
+}
 
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-        }
+.logo small {
+    display: block;
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 3px;
+}
 
-        .hero h1 span {
-            color: #ffb703;
-        }
+.search {
+    display: flex;
+    flex: 1;
+    max-width: 650px;
+    min-width: 220px;
+}
 
-        .hero p {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
+.search input {
+    flex: 1;
+    padding: 13px;
+    border: 2px solid #222;
+    font-size: 14px;
+    outline: none;
+}
 
-        .btn {
-            display: inline-block;
-            background: #ffb703;
-            color: #101820;
-            padding: 14px 28px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: .3s;
-        }
+.search button {
+    background: #ffd400;
+    border: 2px solid #222;
+    padding: 0 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .btn:hover {
-            background: white;
-            transform: translateY(-3px);
-        }
+.contact-btn {
+    background: #16a34a;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 4px;
+    font-weight: bold;
+}
 
-        /* Search */
-        .search-box {
-            background: white;
-            width: 84%;
-            margin: -35px auto 50px;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 25px rgba(0,0,0,.12);
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+nav {
+    background: #ffd400;
+    padding: 13px 5%;
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 14px;
+}
 
-        .search-box input,
-        .search-box select {
-            flex: 1;
-            min-width: 150px;
-            padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+nav a:hover {
+    color: #e00020;
+}
 
-        .search-box button {
-            background: #101820;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.banner {
+    margin: 20px 5%;
+    background: linear-gradient(110deg, #242424, #555);
+    color: white;
+    padding: 35px;
+    border-radius: 5px;
+}
 
-        /* Sections */
-        section {
-            padding: 55px 8%;
-        }
+.banner h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+.banner p {
+    color: #eee;
+    line-height: 1.6;
+}
 
-        .section-title h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
+.banner strong {
+    color: #ffd400;
+}
 
-        .section-title p {
-            color: #777;
-        }
+.page {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 20px;
+    margin: 20px 5%;
+}
 
-        /* Cars */
-        .car-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
+.sidebar {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 18px;
+    height: fit-content;
+}
 
-        .car-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,.08);
-            transition: .3s;
-        }
+.sidebar h3 {
+    font-size: 17px;
+    border-bottom: 2px solid #ffd400;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
 
-        .car-card:hover {
-            transform: translateY(-7px);
-        }
+.filter-group {
+    margin-bottom: 22px;
+}
 
-        .car-card img {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-        }
+.filter-group h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 
-        .car-info {
-            padding: 20px;
-        }
+.filter-group label {
+    display: block;
+    font-size: 13px;
+    margin: 9px 0;
+    cursor: pointer;
+}
 
-        .car-info h3 {
-            font-size: 21px;
-            margin-bottom: 12px;
-        }
+.filter-group input {
+    margin-right: 7px;
+}
 
-        .car-info p {
-            color: #777;
-            line-height: 1.8;
-            font-size: 14px;
-        }
+.products-area {
+    min-width: 0;
+}
 
-        .price {
-            color: #d99000;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 15px 0;
-        }
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
 
-        .car-info .btn {
-            padding: 10px 18px;
-            font-size: 14px;
-        }
+.section-heading h2 {
+    font-size: 19px;
+}
 
-        /* Services */
-        .services {
-            background: #101820;
-            color: white;
-        }
+.section-heading select {
+    padding: 9px;
+    border: 1px solid #ccc;
+}
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+}
 
-        .service-card {
-            background: #1c2a36;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: 0.2s;
+}
 
-        .service-card .icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
+.product-card:hover {
+    border-color: #e00020;
+    box-shadow: 0 3px 12px #00000012;
+}
 
-        .service-card h3 {
-            color: #ffb703;
-            margin-bottom: 12px;
-        }
+.product-card img {
+    width: 100%;
+    height: 145px;
+    object-fit: contain;
+    background: #f5f5f5;
+}
 
-        .service-card p {
-            color: #ccc;
-            line-height: 1.6;
-        }
+.product-card h3 {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 10px 0 6px;
+    min-height: 39px;
+}
 
-        /* About */
-        .about {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
+.product-info {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.8;
+}
 
-        .about img {
-            width: 100%;
-            max-width: 480px;
-            border-radius: 10px;
-        }
+.price {
+    color: #d40020;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 9px 0;
+}
 
-        .about-content {
-            flex: 1;
-            min-width: 260px;
-        }
+.status {
+    display: inline-block;
+    padding: 4px 7px;
+    background: #e5f7e9;
+    color: #168238;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+}
 
-        .about-content h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
+.product-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+}
 
-        .about-content p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
+.product-buttons button {
+    border: none;
+    padding: 9px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+}
 
-        /* Contact */
-        .contact {
-            background: #fff;
-            text-align: center;
-        }
+.details-btn {
+    background: #eee;
+    color: #222;
+}
 
-        .contact p {
-            margin: 12px 0;
-            color: #555;
-        }
+.whatsapp-btn {
+    background: #16a34a;
+    color: white;
+}
 
-        /* Footer */
-        footer {
-            background: #101820;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.categories {
+    margin: 20px 5%;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
 
-        footer span {
-            color: #ffb703;
-        }
+.categories h2 {
+    margin-bottom: 15px;
+}
 
-        /* Mobile */
-        @media(max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
 
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-            }
+.category-list a {
+    background: #f5f5f5;
+    padding: 17px 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #eee;
+}
 
-            nav a {
-                margin: 0;
-                font-size: 13px;
-            }
+.category-list a:hover {
+    background: #ffd400;
+}
 
-            .hero h1 {
-                font-size: 36px;
-            }
+.request {
+    margin: 20px 5%;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #ddd;
+}
 
-            .hero {
-                min-height: 450px;
-            }
+.request h2 {
+    margin-bottom: 10px;
+}
 
-            .search-box {
-                width: 90%;
-            }
-        }
-    </style>
+.request p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.request form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.request input,
+.request textarea,
+.request select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-family: inherit;
+}
+
+.request textarea {
+    grid-column: 1 / -1;
+    min-height: 90px;
+}
+
+.request button {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 30px 5%;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer p {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.copyright {
+    border-top: 1px solid #555;
+    padding-top: 15px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.float-whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #16a34a;
+    color: white;
+    padding: 15px 19px;
+    border-radius: 40px;
+    font-weight: bold;
+    box-shadow: 0 3px 12px #0004;
+    z-index: 10;
+}
+
+.no-results {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.modal-content {
+    background: white;
+    max-width: 520px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 5px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #f5f5f5;
+    margin: 12px 0;
+}
+
+.close {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media(max-width: 1100px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 750px) {
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .banner h1 {
+        font-size: 23px;
+    }
+}
+
+@media(max-width: 450px) {
+    .topbar {
+        font-size: 11px;
+    }
+
+    .product-card img {
+        height: 115px;
+    }
+
+    .request form {
+        grid-template-columns: 1fr;
+    }
+
+    .request textarea {
+        grid-column: auto;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <div class="logo">CEYLON MOTOR HUB</div>
+<div class="topbar">
+    <span>🇯🇵 Japanese Imported Auto Parts</span>
+    <span>Serving Customers Across Sri Lanka 🇱🇰</span>
+</div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#cars">Vehicles</a>
-            <a href="#services">Services</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
+    <div class="header-main">
+        <a class="logo" href="#">
+            CEYLON <span>MOTOR HUB</span>
+            <small>JAPANESE AUTO PARTS</small>
+        </a>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Find Your <span>Dream Car</span></h1>
-            <p>
-                Welcome to Ceylon Motor Hub. Explore quality vehicles,
-                discover amazing deals, and find the perfect car
-                for your lifestyle.
-            </p>
-            <a href="#cars" class="btn">Explore Vehicles</a>
+        <div class="search">
+            <input type="text" id="searchInput"
+            placeholder="Search parts, vehicle models, engine codes...">
+            <button onclick="renderProducts()">SEARCH</button>
         </div>
+
+        <a class="contact-btn" href="https://wa.me/94770000000">
+            WhatsApp Us
+        </a>
+    </div>
+</header>
+
+<nav>
+    <a href="#">HOME</a>
+    <a href="#products">ALL PRODUCTS</a>
+    <a href="#categories">CATEGORIES</a>
+    <a href="#request">REQUEST A PART</a>
+    <a href="#contact">CONTACT US</a>
+</nav>
+
+<section class="banner">
+    <h1>JAPANESE USED CAR PARTS IN SRI LANKA</h1>
+    <p>
+        Find quality Japanese imported spare parts for your vehicle.
+        <br>
+        <strong>Fixed Prices • Genuine Parts • Islandwide Inquiries</strong>
+    </p>
+</section>
+
+<section class="categories" id="categories">
+    <h2>Browse Categories</h2>
+    <div class="category-list">
+        <a href="#" onclick="filterCategory('Engines')">⚙ Engines</a>
+        <a href="#" onclick="filterCategory('Gearboxes')">🔧 Gearboxes</a>
+        <a href="#" onclick="filterCategory('Body Parts')">🚘 Body Parts</a>
+        <a href="#" onclick="filterCategory('Electrical')">💡 Electrical</a>
+        <a href="#" onclick="filterCategory('Hybrid Parts')">🔋 Hybrid Parts</a>
+        <a href="#" onclick="filterCategory('Suspension')">🛞 Suspension</a>
+    </div>
+</section>
+
+<main class="page" id="products">
+
+    <aside class="sidebar">
+        <h3>FILTER PRODUCTS</h3>
+
+        <div class="filter-group">
+            <h4>Categories</h4>
+            <label><input type="radio" name="category" value="All" checked onchange="renderProducts()"> All Parts</label>
+            <label><input type="radio" name="category" value="Engines" onchange="renderProducts()"> Engines</label>
+            <label><input type="radio" name="category" value="Gearboxes" onchange="renderProducts()"> Gearboxes</label>
+            <label><input type="radio" name="category" value="Body Parts" onchange="renderProducts()"> Body Parts</label>
+            <label><input type="radio" name="category" value="Electrical" onchange="renderProducts()"> Electrical</label>
+            <label><input type="radio" name="category" value="Hybrid Parts" onchange="renderProducts()"> Hybrid Parts</label>
+            <label><input type="radio" name="category" value="Suspension" onchange="renderProducts()"> Suspension</label>
+        </div>
+
+        <div class="filter-group">
+            <h4>Vehicle Brand</h4>
+            <label><input type="checkbox" class="brand-filter" value="Toyota" onchange="renderProducts()"> Toyota</label>
+            <label><input type="checkbox" class="brand-filter" value="Honda" onchange="renderProducts()"> Honda</label>
+            <label><input type="checkbox" class="brand-filter" value="Nissan" onchange="renderProducts()"> Nissan</label>
+            <label><input type="checkbox" class="brand-filter" value="Suzuki" onchange="renderProducts()"> Suzuki</label>
+        </div>
+
+        <div class="filter-group">
+            <h4>Condition</h4>
+            <label><input type="checkbox" class="condition-filter" value="Used" onchange="renderProducts()"> Used</label>
+            <label><input type="checkbox" class="condition-filter" value="Used - Tested" onchange="renderProducts()"> Used - Tested</label>
+            <label><input type="checkbox" class="condition-filter" value="Reconditioned" onchange="renderProducts()"> Reconditioned</label>
+        </div>
+    </aside>
+
+    <section class="products-area">
+        <div class="section-heading">
+            <h2>Latest Japanese Parts</h2>
+            <select id="sortSelect" onchange="renderProducts()">
+                <option value="latest">Latest First</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+            </select>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
     </section>
+</main>
 
-    <!-- Search -->
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search vehicle name">
+<section class="request" id="request">
+    <h2>Can't Find Your Required Part?</h2>
+    <p>Send us your vehicle details and tell us which Japanese spare part you need.</p>
 
-        <select id="brandFilter">
-            <option value="">All Brands</option>
-            <option value="Toyota">Toyota</option>
-            <option value="Honda">Honda</option>
-            <option value="Suzuki">Suzuki</option>
-            <option value="Nissan">Nissan</option>
-        </select>
+    <form id="requestForm">
+        <input id="customerName" placeholder="Your Name" required>
+        <input id="customerPhone" placeholder="Phone Number" required>
+        <input id="vehicleModel" placeholder="Vehicle Model" required>
+        <input id="vehicleYear" placeholder="Vehicle Year">
+        <input id="engineCode" placeholder="Engine Code">
+        <input id="chassisNumber" placeholder="Chassis Number">
+        <textarea id="partNeeded" placeholder="Describe the part you need..." required></textarea>
+        <button type="submit">SEND PART REQUEST VIA WHATSAPP</button>
+    </form>
+</section>
 
-        <button onclick="searchCars()">Search Cars</button>
+<footer id="contact">
+    <div class="footer-content">
+        <div>
+            <h2>CEYLON MOTOR HUB</h2>
+            <p>Japanese Imported Used Car Parts<br>
+            Sri Lanka</p>
+        </div>
+
+        <div>
+            <h3>Contact Us</h3>
+            <p>WhatsApp: +94 77 000 0000<br>
+            Email: your-email@example.com</p>
+        </div>
+
+        <div>
+            <h3>Our Services</h3>
+            <p>Japanese Spare Parts<br>
+            Engine & Gearbox Parts<br>
+            Hybrid Parts<br>
+            Special Part Requests</p>
+        </div>
     </div>
 
-    <!-- Vehicles -->
-    <section id="cars">
-        <div class="section-title">
-            <h2>Featured Vehicles</h2>
-            <p>Explore our featured vehicle collection</p>
-        </div>
+    <div class="copyright">
+        © 2026 CEYLON MOTOR HUB. All Rights Reserved.
+        <br>Japanese Auto Parts Marketplace | Sri Lanka
+    </div>
+</footer>
 
-        <div class="car-grid" id="carGrid">
+<a class="float-whatsapp" href="https://wa.me/94770000000">
+    ☎ WhatsApp
+</a>
 
-            <div class="car-card" data-name="Toyota Prius" data-brand="Toyota">
-                <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=900&q=80" alt="Toyota car">
-                <div class="car-info">
-                    <h3>Toyota Prius</h3>
-                    <p>Hybrid | Automatic | 2020</p>
-                    <div class="price">Contact for Price</div>
-                    <a href="#contact" class="btn">Inquire Now</a>
-                </div>
+<div class="modal" id="productModal" onclick="if(event.target===this) closeModal()">
+    <div class="modal-content" id="modalContent">
+        <span class="close" onclick="closeModal()">×</span>
+        <div id="modalDetails"></div>
+    </div>
+</div>
+
+<script>
+
+// EDIT YOUR WHATSAPP NUMBER HERE.
+// Use country code and number without + or spaces.
+const WHATSAPP_NUMBER = "94770000000";
+
+// EDIT OR ADD YOUR PRODUCTS HERE.
+// Demo prices and sample products: replace with your real inventory.
+
+const products = [
+{
+id: 1,
+name: "Toyota Aqua NHP10 1NZ-FXE Engine",
+category: "Engines",
+brand: "Toyota",
+model: "Aqua NHP10",
+year: "2012-2017",
+engine: "1NZ-FXE",
+condition: "Used - Tested",
+price: 185000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Toyota+Aqua+Engine",
+description: "Japanese imported engine. Contact us to confirm compatibility and availability."
+},
+{
+id: 2,
+name: "Honda Fit GP5 L13B Engine",
+category: "Engines",
+brand: "Honda",
+model: "Fit GP5",
+year: "2013-2020",
+engine: "L13B",
+condition: "Used",
+price: 210000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Honda+Fit+Engine",
+description: "Imported Japanese engine. Please confirm your chassis number before ordering."
+},
+{
+id: 3,
+name: "Toyota Prius ZVW30 Hybrid Battery",
+category: "Hybrid Parts",
+brand: "Toyota",
+model: "Prius ZVW30",
+year: "2009-2015",
+engine: "2ZR-FXE",
+condition: "Used - Tested",
+price: 95000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Prius+Hybrid+Battery",
+description: "Hybrid battery pack. Ask about testing and warranty details."
+},
+{
+id: 4,
+name: "Nissan X-Trail MR20 Engine",
+category: "Engines",
+brand: "Nissan",
+model: "X-Trail",
+year: "2007-2013",
+engine: "MR20",
+condition: "Used",
+price: 245000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Nissan+Engine",
+description: "Japanese imported engine. Confirm vehicle compatibility before purchase."
+},
+{
+id: 5,
+name: "Toyota Axio NZE141 CVT Gearbox",
+category: "Gearboxes",
+brand: "Toyota",
+model: "Axio NZE141",
+year: "2006-2012",
+engine: "1NZ-FE",
+condition: "Used - Tested",
+price: 125000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Toyota+CVT+Gearbox",
+description: "Used Japanese gearbox. Contact us with your chassis number."
+},
+{
+id: 6,
+name: "Suzuki Wagon R MH55S Engine",
+category: "Engines",
+brand: "Suzuki",
+model: "Wagon R MH55S",
+year: "2017-2020",
+engine: "R06A",
+condition: "Used",
+price: 155000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Suzuki+Engine",
+description: "Japanese imported engine. Compatibility confirmation required."
+},
+{
+id: 7,
+name: "Honda Civic FK7 Headlight",
+category: "Body Parts",
+brand: "Honda",
+model: "Civic FK7",
+year: "2017-2021",
+engine: "L15B",
+condition: "Used",
+price: 65000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Civic+Headlight",
+description: "Imported headlight assembly. Contact us to confirm side and condition."
+},
+{
+id: 8,
+name: "Toyota Allion NZT260 Tail Lamp",
+category: "Electrical",
+brand: "Toyota",
+model: "Allion NZT260",
+year: "2007-2016",
+engine: "1NZ-FE",
+condition: "Used",
+price: 18000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Toyota+Tail+Lamp",
+description: "Japanese imported tail lamp. Confirm left or right side."
+},
+{
+id: 9,
+name: "Toyota Vitz KSP130 Engine",
+category: "Engines",
+brand: "Toyota",
+model: "Vitz KSP130",
+year: "2010-2017",
+engine: "1KR-FE",
+condition: "Used",
+price: 145000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Vitz+Engine",
+description: "Japanese imported engine. Contact us for details."
+},
+{
+id: 10,
+name: "Nissan Note E12 HR12 Engine",
+category: "Engines",
+brand: "Nissan",
+model: "Note E12",
+year: "2012-2020",
+engine: "HR12",
+condition: "Used",
+price: 165000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Nissan+Note+Engine",
+description: "Japanese imported engine. Please verify compatibility."
+},
+{
+id: 11,
+name: "Honda Grace GM4 Hybrid Battery",
+category: "Hybrid Parts",
+brand: "Honda",
+model: "Grace GM4",
+year: "2014-2020",
+engine: "LEB",
+condition: "Used - Tested",
+price: 88000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Honda+Hybrid+Battery",
+description: "Hybrid battery. Contact us for testing and compatibility information."
+},
+{
+id: 12,
+name: "Toyota Corolla Axio Suspension Parts",
+category: "Suspension",
+brand: "Toyota",
+model: "Axio",
+year: "2006-2012",
+engine: "Various",
+condition: "Used",
+price: 25000,
+status: "Available",
+image: "https://placehold.co/400x300?text=Suspension+Parts",
+description: "Japanese imported suspension components. Specify the required part."
+}
+];
+
+function money(price) {
+    return "LKR " + Number(price).toLocaleString("en-US");
+}
+
+function whatsappLink(product) {
+    const message = `Hello CEYLON MOTOR HUB, I am interested in:
+Product: ${product.name}
+Product ID: ${product.id}
+Price: ${money(product.price)}
+Please confirm availability.`;
+
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+function renderProducts() {
+    const search = document.getElementById("searchInput").value.toLowerCase();
+
+    const category = document.querySelector('input[name="category"]:checked').value;
+
+    const brands = [...document.querySelectorAll(".brand-filter:checked")]
+        .map(input => input.value);
+
+    const conditions = [...document.querySelectorAll(".condition-filter:checked")]
+        .map(input => input.value);
+
+    let filtered = products.filter(product => {
+        const searchable = [
+            product.name, product.brand, product.model,
+            product.engine, product.category, product.year,
+            product.condition, product.id
+        ].join(" ").toLowerCase();
+
+        return searchable.includes(search)
+            && (category === "All" || product.category === category)
+            && (brands.length === 0 || brands.includes(product.brand))
+            && (conditions.length === 0 || conditions.includes(product.condition));
+    });
+
+    const sort = document.getElementById("sortSelect").value;
+
+    if (sort === "low") filtered.sort((a,b) => a.price - b.price);
+    if (sort === "high") filtered.sort((a,b) => b.price - a.price);
+    if (sort === "latest") filtered.sort((a,b) => b.id - a.id);
+
+    const grid = document.getElementById("productGrid");
+
+    if (filtered.length === 0) {
+        grid.innerHTML = '<div class="no-results">No matching products found. Try another search or request your part.</div>';
+        return;
+    }
+
+    grid.innerHTML = filtered.map(product => `
+        <article class="product-card">
+            <img src="${product.image}"
+                 alt="${product.name}"
+                 onerror="this.src='https://placehold.co/400x300?text=Auto+Part'">
+
+            <h3>${product.name}</h3>
+
+            <div class="product-info">
+                Brand: ${product.brand}<br>
+                Model: ${product.model}<br>
+                Condition: ${product.condition}
             </div>
 
-            <div class="car-card" data-name="Honda Civic" data-brand="Honda">
-                <img src="https://images.unsplash.com/photo-1594070319944-7c0cbebb6f58?auto=format&fit=crop&w=900&q=80" alt="Honda car">
-                <div class="car-info">
-                    <h3>Honda Civic</h3>
-                    <p>Petrol | Automatic | 2021</p>
-                    <div class="price">Contact for Price</div>
-                    <a href="#contact" class="btn">Inquire Now</a>
-                </div>
+            <div class="price">${money(product.price)}</div>
+
+            <span class="status">${product.status}</span>
+
+            <div class="product-buttons">
+                <button class="details-btn" onclick="showDetails(${product.id})">
+                    VIEW DETAILS
+                </button>
+
+                <button class="whatsapp-btn"
+                    onclick="window.open(whatsappLink(products.find(p=>p.id===${product.id})), '_blank')">
+                    BUY / INQUIRE
+                </button>
             </div>
+        </article>
+    `).join("");
+}
 
-            <div class="car-card" data-name="Suzuki Swift" data-brand="Suzuki">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Suzuki car">
-                <div class="car-info">
-                    <h3>Suzuki Swift</h3>
-                    <p>Petrol | Automatic | 2022</p>
-                    <div class="price">Contact for Price</div>
-                    <a href="#contact" class="btn">Inquire Now</a>
-                </div>
-            </div>
+function filterCategory(category) {
+    document.querySelectorAll('input[name="category"]').forEach(input => {
+        input.checked = input.value === category;
+    });
 
-            <div class="car-card" data-name="Nissan X Trail" data-brand="Nissan">
-                <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="SUV vehicle">
-                <div class="car-info">
-                    <h3>Nissan X-Trail</h3>
-                    <p>Petrol | Automatic | 2021</p>
-                    <div class="price">Contact for Price</div>
-                    <a href="#contact" class="btn">Inquire Now</a>
-                </div>
-            </div>
+    renderProducts();
+    document.getElementById("products").scrollIntoView({behavior: "smooth"});
+}
 
-        </div>
+function showDetails(id) {
+    const product = products.find(p => p.id === id);
 
-        <p id="noResults" style="display:none; text-align:center; margin-top:25px;">
-            No matching vehicles found.
-        </p>
-    </section>
-
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p style="color:#ccc;">Your trusted automotive partner</p>
-        </div>
-
-        <div class="service-grid">
-            <div class="service-card">
-                <div class="icon">🚘</div>
-                <h3>Vehicle Sales</h3>
-                <p>Explore a range of vehicles to suit your needs.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">🔄</div>
-                <h3>Vehicle Exchange</h3>
-                <p>Trade your current vehicle for another option.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">💰</div>
-                <h3>Vehicle Financing</h3>
-                <p>Explore available vehicle financing options.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="icon">🤝</div>
-                <h3>Customer Support</h3>
-                <p>Get assistance throughout your vehicle search.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-        <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=1000&q=80" alt="Modern automobile">
-
-        <div class="about-content">
-            <h2>About Ceylon Motor Hub</h2>
-            <p>
-                Ceylon Motor Hub is an automotive website designed
-                to help customers explore vehicles and discover
-                suitable options for their needs.
-            </p>
-            <p>
-                Our goal is to make your vehicle search simple,
-                convenient, and enjoyable.
-            </p>
-            <a href="#contact" class="btn">Contact Us</a>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="section-title">
-            <h2>Contact Us</h2>
-            <p>Interested in a vehicle? Get in touch with us.</p>
-        </div>
-
-        <p>📍 Sri Lanka</p>
-        <p>📞 Add Your Phone Number</p>
-        <p>✉️ Add Your Email Address</p>
-
+    document.getElementById("modalDetails").innerHTML = `
+        <h2>${product.name}</h2>
+        <img src="${product.image}" alt="${product.name}">
+        <div class="price">${money(product.price)}</div>
+        <p><b>Product ID:</b> ${product.id}</p>
+        <p><b>Brand:</b> ${product.brand}</p>
+        <p><b>Vehicle:</b> ${product.model}</p>
+        <p><b>Year:</b> ${product.year}</p>
+        <p><b>Engine:</b> ${product.engine}</p>
+        <p><b>Condition:</b> ${product.condition}</p>
+        <p><b>Status:</b> ${product.status}</p>
+        <p style="margin-top:12px;line-height:1.6">${product.description}</p>
         <br>
-        <a href="https://wa.me/94770000000" class="btn" target="_blank">
-            Chat on WhatsApp
+        <a class="contact-btn" style="display:block;text-align:center"
+        href="${whatsappLink(product)}" target="_blank">
+            BUY / INQUIRE ON WHATSAPP
         </a>
-    </section>
+    `;
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 <span>Ceylon Motor Hub</span>. All Rights Reserved.</p>
-        <p style="margin-top:8px;">Drive Your Dreams With Confidence.</p>
-    </footer>
+    document.getElementById("productModal").style.display = "flex";
+}
 
-    <!-- Search Function -->
-    <script>
-        function searchCars() {
-            const search = document.getElementById("searchInput")
-                .value.toLowerCase();
+function closeModal() {
+    document.getElementById("productModal").style.display = "none";
+}
 
-            const brand = document.getElementById("brandFilter").value;
+document.getElementById("searchInput").addEventListener("input", renderProducts);
 
-            const cars = document.querySelectorAll(".car-card");
-            let count = 0;
+document.getElementById("requestForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-            cars.forEach(car => {
-                const name = car.dataset.name.toLowerCase();
-                const carBrand = car.dataset.brand;
+    const message = `Hello CEYLON MOTOR HUB. I want to request a car part.
 
-                const matchesName = name.includes(search);
-                const matchesBrand = !brand || carBrand === brand;
+Name: ${document.getElementById("customerName").value}
+Phone: ${document.getElementById("customerPhone").value}
+Vehicle: ${document.getElementById("vehicleModel").value}
+Year: ${document.getElementById("vehicleYear").value}
+Engine Code: ${document.getElementById("engineCode").value}
+Chassis Number: ${document.getElementById("chassisNumber").value}
+Required Part: ${document.getElementById("partNeeded").value}`;
 
-                if (matchesName && matchesBrand) {
-                    car.style.display = "block";
-                    count++;
-                } else {
-                    car.style.display = "none";
-                }
-            });
+    window.open(
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+});
 
-            document.getElementById("noResults").style.display =
-                count === 0 ? "block" : "none";
-        }
-    </script>
+renderProducts();
+
+</script>
 
 </body>
 </html>
