@@ -1,42 +1,132 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CEYLON MOTOR HUB - Japanese imported used car parts in Sri Lanka.">
-<title>CEYLON MOTOR HUB | Japanese Auto Parts</title>
+<title>CEYLON MOTOR HUB | Japanese Auto Parts Sri Lanka</title>
+<meta name="description" content="Japanese imported used car parts in Sri Lanka. Find engines, gearboxes, hybrid batteries and spare parts.">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --yellow: #ffd400;
+    --red: #d71920;
+    --dark: #202124;
+    --green: #159447;
+    --gray: #f3f4f6;
+    --border: #dedede;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: Arial, sans-serif;
-    background: #f3f4f6;
+    background: var(--gray);
     color: #222;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+button, input, select, textarea { font: inherit; }
+button, a { cursor: pointer; }
+a { text-decoration: none; color: inherit; }
+
+.hidden { display: none !important; }
+
+/* LOGIN PAGE */
+
+#authPage {
+    min-height: 100vh;
+    background: linear-gradient(130deg, #171717, #444);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
+
+.auth-box {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    border-radius: 9px;
+    box-shadow: 0 10px 35px #0005;
+}
+
+.auth-logo {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.auth-logo span { color: var(--red); }
+
+.auth-subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 13px;
+}
+
+.primary-btn {
+    width: 100%;
+    background: var(--yellow);
+    border: 0;
+    padding: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+}
+
+.auth-switch button {
+    border: 0;
+    background: none;
+    color: var(--red);
+    font-weight: bold;
+}
+
+.demo-info {
+    margin-top: 20px;
+    padding: 12px;
+    background: #fff8d9;
+    font-size: 12px;
+    line-height: 1.7;
+    border-radius: 4px;
+}
+
+/* HEADER */
 
 .topbar {
     background: #252525;
     color: white;
     padding: 9px 5%;
-    font-size: 13px;
+    font-size: 12px;
     display: flex;
     justify-content: space-between;
 }
 
 header {
     background: white;
-    padding: 20px 5%;
-    border-bottom: 1px solid #ddd;
+    padding: 17px 5%;
+    border-bottom: 1px solid var(--border);
 }
 
 .header-main {
@@ -48,18 +138,15 @@ header {
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: #222;
+    font-size: 24px;
+    font-weight: 900;
 }
 
-.logo span {
-    color: #e00020;
-}
+.logo span { color: var(--red); }
 
 .logo small {
     display: block;
-    font-size: 10px;
+    font-size: 9px;
     color: #777;
     letter-spacing: 3px;
 }
@@ -67,7 +154,7 @@ header {
 .search {
     display: flex;
     flex: 1;
-    max-width: 650px;
+    max-width: 620px;
     min-width: 220px;
 }
 
@@ -75,44 +162,56 @@ header {
     flex: 1;
     padding: 13px;
     border: 2px solid #222;
-    font-size: 14px;
     outline: none;
 }
 
 .search button {
-    background: #ffd400;
+    background: var(--yellow);
     border: 2px solid #222;
-    padding: 0 24px;
+    padding: 0 20px;
     font-weight: bold;
-    cursor: pointer;
 }
 
-.contact-btn {
-    background: #16a34a;
-    color: white;
-    padding: 12px 18px;
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-actions button {
+    padding: 11px 15px;
+    border: 0;
     border-radius: 4px;
     font-weight: bold;
 }
 
+.whatsapp {
+    background: var(--green);
+    color: white;
+}
+
+.logout {
+    background: #eee;
+}
+
 nav {
-    background: #ffd400;
+    background: var(--yellow);
     padding: 13px 5%;
     display: flex;
     gap: 25px;
     overflow-x: auto;
     white-space: nowrap;
+    font-size: 13px;
     font-weight: bold;
-    font-size: 14px;
 }
 
-nav a:hover {
-    color: #e00020;
-}
+nav a:hover { color: var(--red); }
+
+/* MAIN */
 
 .banner {
     margin: 20px 5%;
-    background: linear-gradient(110deg, #242424, #555);
+    background: linear-gradient(110deg, #222, #555);
     color: white;
     padding: 35px;
     border-radius: 5px;
@@ -124,73 +223,83 @@ nav a:hover {
 }
 
 .banner p {
+    line-height: 1.7;
     color: #eee;
-    line-height: 1.6;
 }
 
-.banner strong {
-    color: #ffd400;
-}
+.banner strong { color: var(--yellow); }
 
-.page {
-    display: grid;
-    grid-template-columns: 230px 1fr;
-    gap: 20px;
+.categories {
     margin: 20px 5%;
+    background: white;
+    border: 1px solid var(--border);
+    padding: 20px;
+}
+
+.categories h2 { margin-bottom: 15px; }
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.category-list button {
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    padding: 17px 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.category-list button:hover {
+    background: var(--yellow);
+}
+
+.market {
+    margin: 20px 5%;
+    display: grid;
+    grid-template-columns: 225px 1fr;
+    gap: 18px;
 }
 
 .sidebar {
     background: white;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     padding: 18px;
     height: fit-content;
 }
 
 .sidebar h3 {
-    font-size: 17px;
-    border-bottom: 2px solid #ffd400;
+    border-bottom: 2px solid var(--yellow);
     padding-bottom: 12px;
     margin-bottom: 15px;
 }
 
-.filter-group {
-    margin-bottom: 22px;
-}
+.filter-group { margin-bottom: 22px; }
 
-.filter-group h4 {
-    margin-bottom: 10px;
-    font-size: 14px;
-}
+.filter-group h4 { margin-bottom: 10px; }
 
 .filter-group label {
     display: block;
     font-size: 13px;
-    margin: 9px 0;
-    cursor: pointer;
+    margin: 10px 0;
 }
 
-.filter-group input {
-    margin-right: 7px;
-}
+.filter-group input { margin-right: 7px; }
 
-.products-area {
-    min-width: 0;
-}
+.products-area { min-width: 0; }
 
 .section-heading {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 14px;
+    margin-bottom: 14px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 12px;
-    background: white;
-    padding: 15px;
-    border: 1px solid #ddd;
-    margin-bottom: 15px;
-}
-
-.section-heading h2 {
-    font-size: 19px;
 }
 
 .section-heading select {
@@ -206,19 +315,19 @@ nav a:hover {
 
 .product-card {
     background: white;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     padding: 10px;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .product-card:hover {
-    border-color: #e00020;
-    box-shadow: 0 3px 12px #00000012;
+    border-color: var(--red);
+    box-shadow: 0 4px 12px #0001;
 }
 
 .product-card img {
     width: 100%;
-    height: 145px;
+    height: 140px;
     object-fit: contain;
     background: #f5f5f5;
 }
@@ -226,31 +335,36 @@ nav a:hover {
 .product-card h3 {
     font-size: 13px;
     line-height: 1.5;
-    margin: 10px 0 6px;
+    margin: 10px 0;
     min-height: 39px;
 }
 
 .product-info {
-    font-size: 12px;
-    color: #666;
+    color: #777;
+    font-size: 11px;
     line-height: 1.8;
 }
 
 .price {
-    color: #d40020;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
-    margin: 9px 0;
+    color: var(--red);
+    margin: 10px 0;
 }
 
 .status {
     display: inline-block;
-    padding: 4px 7px;
+    padding: 5px 7px;
     background: #e5f7e9;
     color: #168238;
-    font-size: 11px;
-    font-weight: bold;
     border-radius: 3px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.sold {
+    background: #ffe4e4;
+    color: #c00;
 }
 
 .product-buttons {
@@ -261,153 +375,117 @@ nav a:hover {
 }
 
 .product-buttons button {
-    border: none;
     padding: 9px;
-    cursor: pointer;
+    border: 0;
+    font-size: 11px;
     font-weight: bold;
-    font-size: 12px;
 }
 
-.details-btn {
-    background: #eee;
-    color: #222;
-}
+.details-btn { background: #eee; }
+.buy-btn { background: var(--green); color: white; }
 
-.whatsapp-btn {
-    background: #16a34a;
-    color: white;
-}
-
-.categories {
-    margin: 20px 5%;
+.no-results {
+    grid-column: 1 / -1;
     background: white;
-    padding: 20px;
-    border: 1px solid #ddd;
-}
-
-.categories h2 {
-    margin-bottom: 15px;
-}
-
-.category-list {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-}
-
-.category-list a {
-    background: #f5f5f5;
-    padding: 17px 8px;
+    padding: 35px;
     text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-    border: 1px solid #eee;
 }
 
-.category-list a:hover {
-    background: #ffd400;
-}
+/* REQUEST FORM */
 
 .request {
     margin: 20px 5%;
-    background: #fff;
     padding: 25px;
-    border: 1px solid #ddd;
-}
-
-.request h2 {
-    margin-bottom: 10px;
+    background: white;
+    border: 1px solid var(--border);
 }
 
 .request p {
-    color: #666;
-    margin-bottom: 15px;
-    font-size: 14px;
+    color: #777;
+    margin: 10px 0 18px;
+    font-size: 13px;
 }
 
 .request form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
 
-.request input,
-.request textarea,
-.request select {
+.request input, .request textarea {
     padding: 12px;
     border: 1px solid #ccc;
     width: 100%;
-    font-family: inherit;
 }
 
-.request textarea {
-    grid-column: 1 / -1;
-    min-height: 90px;
-}
+.request textarea { grid-column: 1 / -1; }
 
 .request button {
-    background: #16a34a;
+    background: var(--green);
     color: white;
-    border: none;
+    border: 0;
     padding: 13px;
     font-weight: bold;
-    cursor: pointer;
-}
-
-footer {
-    background: #222;
-    color: white;
-    padding: 30px 5%;
-    margin-top: 30px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-footer p {
-    color: #ccc;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.copyright {
-    border-top: 1px solid #555;
-    padding-top: 15px;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #aaa;
-}
-
-.float-whatsapp {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background: #16a34a;
-    color: white;
-    padding: 15px 19px;
-    border-radius: 40px;
-    font-weight: bold;
-    box-shadow: 0 3px 12px #0004;
-    z-index: 10;
-}
-
-.no-results {
-    background: white;
-    padding: 30px;
-    text-align: center;
     grid-column: 1 / -1;
 }
+
+/* ADMIN */
+
+.admin-panel {
+    margin: 20px 5%;
+    background: white;
+    border: 1px solid var(--border);
+    padding: 22px;
+}
+
+.admin-panel h2 { margin-bottom: 15px; }
+
+.admin-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.admin-form input, .admin-form select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+}
+
+.admin-form button {
+    background: var(--yellow);
+    border: 0;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.admin-products { margin-top: 20px; }
+
+.admin-item {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+}
+
+.delete-btn {
+    background: var(--red);
+    color: white;
+    border: 0;
+    padding: 8px 12px;
+}
+
+/* MODAL */
 
 .modal {
     display: none;
     position: fixed;
     inset: 0;
+    z-index: 30;
     background: #0009;
-    z-index: 20;
     justify-content: center;
     align-items: center;
     padding: 15px;
@@ -415,10 +493,10 @@ footer p {
 
 .modal-content {
     background: white;
-    max-width: 520px;
     width: 100%;
+    max-width: 500px;
     padding: 25px;
-    border-radius: 5px;
+    border-radius: 6px;
     max-height: 90vh;
     overflow-y: auto;
 }
@@ -433,77 +511,157 @@ footer p {
 
 .close {
     float: right;
-    font-size: 25px;
     cursor: pointer;
+    font-size: 25px;
+}
+
+.modal-content p {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.modal-content a {
+    display: block;
+    padding: 13px;
+    text-align: center;
+    background: var(--green);
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #222;
+    color: white;
+    padding: 30px 5%;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+footer p {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 10px;
+}
+
+.copyright {
+    border-top: 1px solid #555;
+    margin-top: 25px;
+    padding-top: 15px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.float-whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 14px 18px;
+    background: var(--green);
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    z-index: 10;
 }
 
 @media(max-width: 1100px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media(max-width: 750px) {
-    .page {
-        grid-template-columns: 1fr;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .category-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .banner h1 {
-        font-size: 23px;
-    }
+    .market { grid-template-columns: 1fr; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .category-list { grid-template-columns: repeat(3, 1fr); }
+    .banner h1 { font-size: 23px; }
+    .admin-form { grid-template-columns: 1fr 1fr; }
 }
 
 @media(max-width: 450px) {
-    .topbar {
-        font-size: 11px;
-    }
-
-    .product-card img {
-        height: 115px;
-    }
-
-    .request form {
-        grid-template-columns: 1fr;
-    }
-
-    .request textarea {
-        grid-column: auto;
-    }
+    .product-card img { height: 105px; }
+    .request form { grid-template-columns: 1fr; }
+    .request textarea, .request button { grid-column: auto; }
+    .admin-form { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- LOGIN AND REGISTER -->
+
+<section id="authPage">
+    <div class="auth-box">
+        <div class="auth-logo">CEYLON <span>MOTOR HUB</span></div>
+        <div class="auth-subtitle">JAPANESE AUTOMOTIVE PARTS MARKETPLACE</div>
+
+        <div id="loginForm">
+            <h2>Welcome Back</h2>
+            <input id="loginEmail" type="email" placeholder="Email Address">
+            <input id="loginPassword" type="password" placeholder="Password">
+            <button class="primary-btn" onclick="login()">LOGIN</button>
+
+            <div class="auth-switch">
+                Don't have an account?
+                <button onclick="showRegister()">Create Account</button>
+            </div>
+
+            <div class="demo-info">
+                <b>Demo administrator login</b><br>
+                Email: admin@ceylonmotorhub.lk<br>
+                Password: MotorHub123
+            </div>
+        </div>
+
+        <div id="registerForm" class="hidden">
+            <h2>Create Account</h2>
+            <input id="registerName" placeholder="Full Name">
+            <input id="registerEmail" type="email" placeholder="Email Address">
+            <input id="registerPassword" type="password" placeholder="Create Password">
+            <button class="primary-btn" onclick="register()">REGISTER</button>
+
+            <div class="auth-switch">
+                Already registered?
+                <button onclick="showLogin()">Login</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN WEBSITE -->
+
+<div id="website" class="hidden">
+
 <div class="topbar">
     <span>🇯🇵 Japanese Imported Auto Parts</span>
-    <span>Serving Customers Across Sri Lanka 🇱🇰</span>
+    <span>🇱🇰 Serving Sri Lanka</span>
 </div>
 
 <header>
     <div class="header-main">
-        <a class="logo" href="#">
+        <a href="#" class="logo">
             CEYLON <span>MOTOR HUB</span>
             <small>JAPANESE AUTO PARTS</small>
         </a>
 
         <div class="search">
-            <input type="text" id="searchInput"
-            placeholder="Search parts, vehicle models, engine codes...">
+            <input id="searchInput" placeholder="Search parts, models, engine codes...">
             <button onclick="renderProducts()">SEARCH</button>
         </div>
 
-        <a class="contact-btn" href="https://wa.me/94770000000">
-            WhatsApp Us
-        </a>
+        <div class="header-actions">
+            <button class="whatsapp" onclick="openWhatsApp()">WhatsApp</button>
+            <button id="adminButton" class="hidden" onclick="showAdmin()">ADMIN</button>
+            <button class="logout" onclick="logout()">LOGOUT</button>
+        </div>
     </div>
 </header>
 
@@ -512,37 +670,37 @@ footer p {
     <a href="#products">ALL PRODUCTS</a>
     <a href="#categories">CATEGORIES</a>
     <a href="#request">REQUEST A PART</a>
-    <a href="#contact">CONTACT US</a>
+    <a href="#contact">CONTACT</a>
 </nav>
 
 <section class="banner">
     <h1>JAPANESE USED CAR PARTS IN SRI LANKA</h1>
     <p>
-        Find quality Japanese imported spare parts for your vehicle.
+        Find Japanese imported spare parts for your vehicle.
         <br>
-        <strong>Fixed Prices • Genuine Parts • Islandwide Inquiries</strong>
+        <strong>FIXED PRICES | QUALITY PARTS | WHATSAPP ORDERS</strong>
     </p>
 </section>
 
 <section class="categories" id="categories">
-    <h2>Browse Categories</h2>
+    <h2>SHOP BY CATEGORY</h2>
     <div class="category-list">
-        <a href="#" onclick="filterCategory('Engines')">⚙ Engines</a>
-        <a href="#" onclick="filterCategory('Gearboxes')">🔧 Gearboxes</a>
-        <a href="#" onclick="filterCategory('Body Parts')">🚘 Body Parts</a>
-        <a href="#" onclick="filterCategory('Electrical')">💡 Electrical</a>
-        <a href="#" onclick="filterCategory('Hybrid Parts')">🔋 Hybrid Parts</a>
-        <a href="#" onclick="filterCategory('Suspension')">🛞 Suspension</a>
+        <button onclick="filterCategory('Engines')">⚙ Engines</button>
+        <button onclick="filterCategory('Gearboxes')">🔧 Gearboxes</button>
+        <button onclick="filterCategory('Body Parts')">🚘 Body Parts</button>
+        <button onclick="filterCategory('Electrical')">💡 Electrical</button>
+        <button onclick="filterCategory('Hybrid Parts')">🔋 Hybrid Parts</button>
+        <button onclick="filterCategory('Suspension')">🛞 Suspension</button>
     </div>
 </section>
 
-<main class="page" id="products">
+<main class="market" id="products">
 
     <aside class="sidebar">
         <h3>FILTER PRODUCTS</h3>
 
         <div class="filter-group">
-            <h4>Categories</h4>
+            <h4>Category</h4>
             <label><input type="radio" name="category" value="All" checked onchange="renderProducts()"> All Parts</label>
             <label><input type="radio" name="category" value="Engines" onchange="renderProducts()"> Engines</label>
             <label><input type="radio" name="category" value="Gearboxes" onchange="renderProducts()"> Gearboxes</label>
@@ -582,57 +740,109 @@ footer p {
     </section>
 </main>
 
+<!-- CUSTOMER REQUEST -->
+
 <section class="request" id="request">
-    <h2>Can't Find Your Required Part?</h2>
-    <p>Send us your vehicle details and tell us which Japanese spare part you need.</p>
+    <h2>REQUEST A CAR PART</h2>
+    <p>Can't find your required part? Send us your vehicle details.</p>
 
     <form id="requestForm">
         <input id="customerName" placeholder="Your Name" required>
         <input id="customerPhone" placeholder="Phone Number" required>
         <input id="vehicleModel" placeholder="Vehicle Model" required>
         <input id="vehicleYear" placeholder="Vehicle Year">
-        <input id="engineCode" placeholder="Engine Code">
+        <input id="requestEngine" placeholder="Engine Code">
         <input id="chassisNumber" placeholder="Chassis Number">
-        <textarea id="partNeeded" placeholder="Describe the part you need..." required></textarea>
-        <button type="submit">SEND PART REQUEST VIA WHATSAPP</button>
+        <textarea id="partNeeded" placeholder="Which part do you need?" required></textarea>
+        <button type="submit">SEND REQUEST ON WHATSAPP</button>
     </form>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+
+<section id="adminPanel" class="admin-panel hidden">
+    <h2>ADMIN DASHBOARD</h2>
+    <p>Add products to your marketplace. Product changes are saved in this browser.</p>
+
+    <form id="addProductForm" class="admin-form">
+        <input id="newName" placeholder="Product Name" required>
+
+        <select id="newCategory">
+            <option>Engines</option>
+            <option>Gearboxes</option>
+            <option>Body Parts</option>
+            <option>Electrical</option>
+            <option>Hybrid Parts</option>
+            <option>Suspension</option>
+        </select>
+
+        <select id="newBrand">
+            <option>Toyota</option>
+            <option>Honda</option>
+            <option>Nissan</option>
+            <option>Suzuki</option>
+            <option>Mazda</option>
+            <option>Mitsubishi</option>
+            <option>Other</option>
+        </select>
+
+        <input id="newModel" placeholder="Vehicle Model">
+        <input id="newEngine" placeholder="Engine Code">
+        <input id="newPrice" type="number" placeholder="Price in LKR" required>
+
+        <select id="newCondition">
+            <option>Used</option>
+            <option>Used - Tested</option>
+            <option>Reconditioned</option>
+            <option>New</option>
+        </select>
+
+        <select id="newStatus">
+            <option>Available</option>
+            <option>Pre-order</option>
+            <option>Price on Request</option>
+            <option>Sold</option>
+        </select>
+
+        <input id="newImage" placeholder="Product Image URL">
+
+        <button type="submit">ADD PRODUCT</button>
+    </form>
+
+    <div class="admin-products" id="adminProducts"></div>
 </section>
 
 <footer id="contact">
     <div class="footer-content">
         <div>
             <h2>CEYLON MOTOR HUB</h2>
-            <p>Japanese Imported Used Car Parts<br>
-            Sri Lanka</p>
+            <p>Japanese Imported Auto Parts<br>Sri Lanka</p>
         </div>
 
         <div>
             <h3>Contact Us</h3>
-            <p>WhatsApp: +94 77 000 0000<br>
-            Email: your-email@example.com</p>
+            <p>WhatsApp: +94 77 000 0000<br>Email: your-email@example.com</p>
         </div>
 
         <div>
             <h3>Our Services</h3>
-            <p>Japanese Spare Parts<br>
-            Engine & Gearbox Parts<br>
-            Hybrid Parts<br>
-            Special Part Requests</p>
+            <p>Engines and Gearboxes<br>Hybrid Parts<br>Body Parts<br>Special Part Requests</p>
         </div>
     </div>
 
     <div class="copyright">
         © 2026 CEYLON MOTOR HUB. All Rights Reserved.
-        <br>Japanese Auto Parts Marketplace | Sri Lanka
     </div>
 </footer>
 
-<a class="float-whatsapp" href="https://wa.me/94770000000">
-    ☎ WhatsApp
-</a>
+<a class="float-whatsapp" href="https://wa.me/94770000000" target="_blank">☎ WhatsApp</a>
+
+</div>
+
+<!-- PRODUCT DETAILS POPUP -->
 
 <div class="modal" id="productModal" onclick="if(event.target===this) closeModal()">
-    <div class="modal-content" id="modalContent">
+    <div class="modal-content">
         <span class="close" onclick="closeModal()">×</span>
         <div id="modalDetails"></div>
     </div>
@@ -640,27 +850,35 @@ footer p {
 
 <script>
 
-// EDIT YOUR WHATSAPP NUMBER HERE.
-// Use country code and number without + or spaces.
+/* CONFIGURATION */
+
 const WHATSAPP_NUMBER = "94770000000";
 
-// EDIT OR ADD YOUR PRODUCTS HERE.
-// Demo prices and sample products: replace with your real inventory.
+const ADMIN_EMAIL = "admin@ceylonmotorhub.lk";
+const ADMIN_PASSWORD = "MotorHub123";
 
-const products = [
+/*
+This is a FRONT-END DEMO LOGIN only.
+For a real business website, use server-side authentication.
+Do not use this demo for sensitive customer accounts.
+*/
+
+let currentUser = null;
+
+/* DEMO PRODUCTS */
+
+const defaultProducts = [
 {
 id: 1,
 name: "Toyota Aqua NHP10 1NZ-FXE Engine",
 category: "Engines",
 brand: "Toyota",
 model: "Aqua NHP10",
-year: "2012-2017",
 engine: "1NZ-FXE",
 condition: "Used - Tested",
 price: 185000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Toyota+Aqua+Engine",
-description: "Japanese imported engine. Contact us to confirm compatibility and availability."
+image: "https://placehold.co/400x300?text=Toyota+Aqua+Engine"
 },
 {
 id: 2,
@@ -668,13 +886,11 @@ name: "Honda Fit GP5 L13B Engine",
 category: "Engines",
 brand: "Honda",
 model: "Fit GP5",
-year: "2013-2020",
 engine: "L13B",
 condition: "Used",
 price: 210000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Honda+Fit+Engine",
-description: "Imported Japanese engine. Please confirm your chassis number before ordering."
+image: "https://placehold.co/400x300?text=Honda+Fit+Engine"
 },
 {
 id: 3,
@@ -682,13 +898,11 @@ name: "Toyota Prius ZVW30 Hybrid Battery",
 category: "Hybrid Parts",
 brand: "Toyota",
 model: "Prius ZVW30",
-year: "2009-2015",
 engine: "2ZR-FXE",
 condition: "Used - Tested",
 price: 95000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Prius+Hybrid+Battery",
-description: "Hybrid battery pack. Ask about testing and warranty details."
+image: "https://placehold.co/400x300?text=Hybrid+Battery"
 },
 {
 id: 4,
@@ -696,13 +910,11 @@ name: "Nissan X-Trail MR20 Engine",
 category: "Engines",
 brand: "Nissan",
 model: "X-Trail",
-year: "2007-2013",
 engine: "MR20",
 condition: "Used",
 price: 245000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Nissan+Engine",
-description: "Japanese imported engine. Confirm vehicle compatibility before purchase."
+image: "https://placehold.co/400x300?text=Nissan+Engine"
 },
 {
 id: 5,
@@ -710,13 +922,11 @@ name: "Toyota Axio NZE141 CVT Gearbox",
 category: "Gearboxes",
 brand: "Toyota",
 model: "Axio NZE141",
-year: "2006-2012",
 engine: "1NZ-FE",
 condition: "Used - Tested",
 price: 125000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Toyota+CVT+Gearbox",
-description: "Used Japanese gearbox. Contact us with your chassis number."
+image: "https://placehold.co/400x300?text=Toyota+Gearbox"
 },
 {
 id: 6,
@@ -724,13 +934,11 @@ name: "Suzuki Wagon R MH55S Engine",
 category: "Engines",
 brand: "Suzuki",
 model: "Wagon R MH55S",
-year: "2017-2020",
 engine: "R06A",
 condition: "Used",
 price: 155000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Suzuki+Engine",
-description: "Japanese imported engine. Compatibility confirmation required."
+image: "https://placehold.co/400x300?text=Suzuki+Engine"
 },
 {
 id: 7,
@@ -738,13 +946,11 @@ name: "Honda Civic FK7 Headlight",
 category: "Body Parts",
 brand: "Honda",
 model: "Civic FK7",
-year: "2017-2021",
 engine: "L15B",
 condition: "Used",
 price: 65000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Civic+Headlight",
-description: "Imported headlight assembly. Contact us to confirm side and condition."
+image: "https://placehold.co/400x300?text=Civic+Headlight"
 },
 {
 id: 8,
@@ -752,13 +958,11 @@ name: "Toyota Allion NZT260 Tail Lamp",
 category: "Electrical",
 brand: "Toyota",
 model: "Allion NZT260",
-year: "2007-2016",
 engine: "1NZ-FE",
 condition: "Used",
 price: 18000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Toyota+Tail+Lamp",
-description: "Japanese imported tail lamp. Confirm left or right side."
+image: "https://placehold.co/400x300?text=Toyota+Tail+Lamp"
 },
 {
 id: 9,
@@ -766,27 +970,23 @@ name: "Toyota Vitz KSP130 Engine",
 category: "Engines",
 brand: "Toyota",
 model: "Vitz KSP130",
-year: "2010-2017",
 engine: "1KR-FE",
 condition: "Used",
 price: 145000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Vitz+Engine",
-description: "Japanese imported engine. Contact us for details."
+image: "https://placehold.co/400x300?text=Vitz+Engine"
 },
 {
 id: 10,
-name: "Nissan Note E12 HR12 Engine",
+name: "Nissan Note E12 Engine",
 category: "Engines",
 brand: "Nissan",
 model: "Note E12",
-year: "2012-2020",
 engine: "HR12",
 condition: "Used",
 price: 165000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Nissan+Note+Engine",
-description: "Japanese imported engine. Please verify compatibility."
+image: "https://placehold.co/400x300?text=Nissan+Note+Engine"
 },
 {
 id: 11,
@@ -794,39 +994,141 @@ name: "Honda Grace GM4 Hybrid Battery",
 category: "Hybrid Parts",
 brand: "Honda",
 model: "Grace GM4",
-year: "2014-2020",
 engine: "LEB",
 condition: "Used - Tested",
 price: 88000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Honda+Hybrid+Battery",
-description: "Hybrid battery. Contact us for testing and compatibility information."
+image: "https://placehold.co/400x300?text=Honda+Hybrid"
 },
 {
 id: 12,
-name: "Toyota Corolla Axio Suspension Parts",
+name: "Toyota Axio Suspension Parts",
 category: "Suspension",
 brand: "Toyota",
 model: "Axio",
-year: "2006-2012",
 engine: "Various",
 condition: "Used",
 price: 25000,
 status: "Available",
-image: "https://placehold.co/400x300?text=Suspension+Parts",
-description: "Japanese imported suspension components. Specify the required part."
+image: "https://placehold.co/400x300?text=Suspension+Parts"
 }
 ];
+
+/* LOCAL STORAGE */
+
+function loadProducts() {
+    try {
+        const saved = localStorage.getItem("cmh_products");
+        return saved ? JSON.parse(saved) : defaultProducts;
+    } catch {
+        return defaultProducts;
+    }
+}
+
+let products = loadProducts();
+
+function saveProducts() {
+    localStorage.setItem("cmh_products", JSON.stringify(products));
+}
+
+/* LOGIN AND REGISTRATION */
+
+function showRegister() {
+    document.getElementById("loginForm").classList.add("hidden");
+    document.getElementById("registerForm").classList.remove("hidden");
+}
+
+function showLogin() {
+    document.getElementById("registerForm").classList.add("hidden");
+    document.getElementById("loginForm").classList.remove("hidden");
+}
+
+function login() {
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+    const password = document.getElementById("loginPassword").value;
+
+    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+        currentUser = { email, role: "admin" };
+        enterWebsite();
+        return;
+    }
+
+    const users = JSON.parse(localStorage.getItem("cmh_users") || "[]");
+
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (!user) {
+        alert("Incorrect email or password. Please register first.");
+        return;
+    }
+
+    currentUser = { email: user.email, role: "customer" };
+    enterWebsite();
+}
+
+function register() {
+    const name = document.getElementById("registerName").value.trim();
+    const email = document.getElementById("registerEmail").value.trim().toLowerCase();
+    const password = document.getElementById("registerPassword").value;
+
+    if (!name || !email || password.length < 6) {
+        alert("Enter your name, email and a password of at least 6 characters.");
+        return;
+    }
+
+    if (email === ADMIN_EMAIL) {
+        alert("This email is reserved.");
+        return;
+    }
+
+    const users = JSON.parse(localStorage.getItem("cmh_users") || "[]");
+
+    if (users.some(u => u.email === email)) {
+        alert("This email is already registered.");
+        return;
+    }
+
+    users.push({ name, email, password });
+    localStorage.setItem("cmh_users", JSON.stringify(users));
+
+    alert("Registration successful. Please login.");
+    showLogin();
+}
+
+function enterWebsite() {
+    document.getElementById("authPage").classList.add("hidden");
+    document.getElementById("website").classList.remove("hidden");
+
+    document.getElementById("adminButton").classList.toggle(
+        "hidden", currentUser.role !== "admin"
+    );
+
+    document.getElementById("adminPanel").classList.add("hidden");
+
+    renderProducts();
+}
+
+function logout() {
+    currentUser = null;
+    document.getElementById("website").classList.add("hidden");
+    document.getElementById("authPage").classList.remove("hidden");
+    document.getElementById("loginPassword").value = "";
+}
+
+/* PRODUCT MARKETPLACE */
 
 function money(price) {
     return "LKR " + Number(price).toLocaleString("en-US");
 }
 
-function whatsappLink(product) {
-    const message = `Hello CEYLON MOTOR HUB, I am interested in:
+function whatsappProduct(product) {
+    const message = `Hello CEYLON MOTOR HUB.
+
+I am interested in this product:
 Product: ${product.name}
 Product ID: ${product.id}
 Price: ${money(product.price)}
+
 Please confirm availability.`;
 
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -835,25 +1137,25 @@ Please confirm availability.`;
 function renderProducts() {
     const search = document.getElementById("searchInput").value.toLowerCase();
 
-    const category = document.querySelector('input[name="category"]:checked').value;
+    const category = document.querySelector(
+        'input[name="category"]:checked'
+    ).value;
 
     const brands = [...document.querySelectorAll(".brand-filter:checked")]
-        .map(input => input.value);
+        .map(el => el.value);
 
     const conditions = [...document.querySelectorAll(".condition-filter:checked")]
-        .map(input => input.value);
+        .map(el => el.value);
 
-    let filtered = products.filter(product => {
-        const searchable = [
-            product.name, product.brand, product.model,
-            product.engine, product.category, product.year,
-            product.condition, product.id
+    let filtered = products.filter(p => {
+        const text = [
+            p.name, p.brand, p.model, p.engine, p.category, p.condition, p.id
         ].join(" ").toLowerCase();
 
-        return searchable.includes(search)
-            && (category === "All" || product.category === category)
-            && (brands.length === 0 || brands.includes(product.brand))
-            && (conditions.length === 0 || conditions.includes(product.condition));
+        return text.includes(search)
+            && (category === "All" || p.category === category)
+            && (brands.length === 0 || brands.includes(p.brand))
+            && (conditions.length === 0 || conditions.includes(p.condition));
     });
 
     const sort = document.getElementById("sortSelect").value;
@@ -864,41 +1166,64 @@ function renderProducts() {
 
     const grid = document.getElementById("productGrid");
 
-    if (filtered.length === 0) {
-        grid.innerHTML = '<div class="no-results">No matching products found. Try another search or request your part.</div>';
+    if (!filtered.length) {
+        grid.innerHTML = '<div class="no-results">No products found. Please try another search.</div>';
         return;
     }
 
-    grid.innerHTML = filtered.map(product => `
+    grid.innerHTML = filtered.map(p => `
         <article class="product-card">
-            <img src="${product.image}"
-                 alt="${product.name}"
+            <img src="${safeImage(p.image)}"
+                 alt="${escapeHTML(p.name)}"
                  onerror="this.src='https://placehold.co/400x300?text=Auto+Part'">
 
-            <h3>${product.name}</h3>
+            <h3>${escapeHTML(p.name)}</h3>
 
             <div class="product-info">
-                Brand: ${product.brand}<br>
-                Model: ${product.model}<br>
-                Condition: ${product.condition}
+                Brand: ${escapeHTML(p.brand)}<br>
+                Model: ${escapeHTML(p.model)}<br>
+                Condition: ${escapeHTML(p.condition)}
             </div>
 
-            <div class="price">${money(product.price)}</div>
+            <div class="price">
+                ${p.status === "Price on Request" ? "Price on Request" : money(p.price)}
+            </div>
 
-            <span class="status">${product.status}</span>
+            <span class="status ${p.status === "Sold" ? "sold" : ""}">
+                ${escapeHTML(p.status)}
+            </span>
 
             <div class="product-buttons">
-                <button class="details-btn" onclick="showDetails(${product.id})">
+                <button class="details-btn" onclick="showDetails(${p.id})">
                     VIEW DETAILS
                 </button>
 
-                <button class="whatsapp-btn"
-                    onclick="window.open(whatsappLink(products.find(p=>p.id===${product.id})), '_blank')">
-                    BUY / INQUIRE
+                <button class="buy-btn" onclick="orderProduct(${p.id})">
+                    WHATSAPP INQUIRY
                 </button>
             </div>
         </article>
     `).join("");
+}
+
+function safeImage(url) {
+    try {
+        const parsed = new URL(url);
+        if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+            return parsed.href;
+        }
+    } catch {}
+    return "https://placehold.co/400x300?text=Auto+Part";
+}
+
+function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[char]);
 }
 
 function filterCategory(category) {
@@ -907,29 +1232,37 @@ function filterCategory(category) {
     });
 
     renderProducts();
-    document.getElementById("products").scrollIntoView({behavior: "smooth"});
+    document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+}
+
+function orderProduct(id) {
+    const p = products.find(item => item.id === id);
+    if (!p) return;
+
+    if (p.status === "Sold") {
+        alert("This product is marked as sold. Please contact us for alternatives.");
+        return;
+    }
+
+    window.open(whatsappProduct(p), "_blank");
 }
 
 function showDetails(id) {
-    const product = products.find(p => p.id === id);
+    const p = products.find(item => item.id === id);
+    if (!p) return;
 
     document.getElementById("modalDetails").innerHTML = `
-        <h2>${product.name}</h2>
-        <img src="${product.image}" alt="${product.name}">
-        <div class="price">${money(product.price)}</div>
-        <p><b>Product ID:</b> ${product.id}</p>
-        <p><b>Brand:</b> ${product.brand}</p>
-        <p><b>Vehicle:</b> ${product.model}</p>
-        <p><b>Year:</b> ${product.year}</p>
-        <p><b>Engine:</b> ${product.engine}</p>
-        <p><b>Condition:</b> ${product.condition}</p>
-        <p><b>Status:</b> ${product.status}</p>
-        <p style="margin-top:12px;line-height:1.6">${product.description}</p>
-        <br>
-        <a class="contact-btn" style="display:block;text-align:center"
-        href="${whatsappLink(product)}" target="_blank">
-            BUY / INQUIRE ON WHATSAPP
-        </a>
+        <h2>${escapeHTML(p.name)}</h2>
+        <img src="${safeImage(p.image)}" alt="${escapeHTML(p.name)}">
+        <div class="price">${p.status === "Price on Request" ? "Price on Request" : money(p.price)}</div>
+        <p><b>Product ID:</b> ${p.id}</p>
+        <p><b>Brand:</b> ${escapeHTML(p.brand)}</p>
+        <p><b>Category:</b> ${escapeHTML(p.category)}</p>
+        <p><b>Vehicle:</b> ${escapeHTML(p.model)}</p>
+        <p><b>Engine:</b> ${escapeHTML(p.engine)}</p>
+        <p><b>Condition:</b> ${escapeHTML(p.condition)}</p>
+        <p><b>Availability:</b> ${escapeHTML(p.status)}</p>
+        <a href="${whatsappProduct(p)}" target="_blank">CONTACT US ON WHATSAPP</a>
     `;
 
     document.getElementById("productModal").style.display = "flex";
@@ -939,19 +1272,102 @@ function closeModal() {
     document.getElementById("productModal").style.display = "none";
 }
 
-document.getElementById("searchInput").addEventListener("input", renderProducts);
+/* ADMIN FUNCTIONS */
+
+function showAdmin() {
+    if (!currentUser || currentUser.role !== "admin") return;
+
+    const panel = document.getElementById("adminPanel");
+    panel.classList.toggle("hidden");
+
+    if (!panel.classList.contains("hidden")) {
+        renderAdmin();
+        panel.scrollIntoView({ behavior: "smooth" });
+    }
+}
+
+function renderAdmin() {
+    document.getElementById("adminProducts").innerHTML = products.map(p => `
+        <div class="admin-item">
+            <span>
+                <b>${escapeHTML(p.name)}</b><br>
+                ${money(p.price)} | ${escapeHTML(p.status)}
+            </span>
+            <button class="delete-btn" onclick="deleteProduct(${p.id})">
+                DELETE
+            </button>
+        </div>
+    `).join("");
+}
+
+document.getElementById("addProductForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (!currentUser || currentUser.role !== "admin") return;
+
+    const product = {
+        id: Date.now(),
+        name: document.getElementById("newName").value.trim(),
+        category: document.getElementById("newCategory").value,
+        brand: document.getElementById("newBrand").value,
+        model: document.getElementById("newModel").value.trim(),
+        engine: document.getElementById("newEngine").value.trim(),
+        condition: document.getElementById("newCondition").value,
+        status: document.getElementById("newStatus").value,
+        price: Number(document.getElementById("newPrice").value),
+        image: document.getElementById("newImage").value.trim() ||
+            "https://placehold.co/400x300?text=Auto+Part"
+    };
+
+    if (!product.name || !Number.isFinite(product.price) || product.price < 0) {
+        alert("Please enter a product name and valid price.");
+        return;
+    }
+
+    products.unshift(product);
+    saveProducts();
+    renderProducts();
+    renderAdmin();
+
+    this.reset();
+    alert("Product added successfully!");
+});
+
+function deleteProduct(id) {
+    if (!currentUser || currentUser.role !== "admin") return;
+
+    if (!confirm("Are you sure you want to delete this product?")) return;
+
+    products = products.filter(p => p.id !== id);
+
+    saveProducts();
+    renderProducts();
+    renderAdmin();
+}
+
+/* WHATSAPP CONTACT */
+
+function openWhatsApp() {
+    const message = "Hello CEYLON MOTOR HUB. I would like to know more about your Japanese car parts.";
+    window.open(
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+}
+
+/* PART REQUEST */
 
 document.getElementById("requestForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const message = `Hello CEYLON MOTOR HUB. I want to request a car part.
+    const message = `Hello CEYLON MOTOR HUB. I need a car part.
 
 Name: ${document.getElementById("customerName").value}
 Phone: ${document.getElementById("customerPhone").value}
 Vehicle: ${document.getElementById("vehicleModel").value}
 Year: ${document.getElementById("vehicleYear").value}
-Engine Code: ${document.getElementById("engineCode").value}
-Chassis Number: ${document.getElementById("chassisNumber").value}
+Engine: ${document.getElementById("requestEngine").value}
+Chassis: ${document.getElementById("chassisNumber").value}
 Required Part: ${document.getElementById("partNeeded").value}`;
 
     window.open(
@@ -960,7 +1376,9 @@ Required Part: ${document.getElementById("partNeeded").value}`;
     );
 });
 
-renderProducts();
+/* SEARCH */
+
+document.getElementById("searchInput").addEventListener("input", renderProducts);
 
 </script>
 
